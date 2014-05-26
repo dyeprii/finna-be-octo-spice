@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="http://static.tumblr.com/l5hngof/StCn665zu/style.min.css" title="" type="text/css" />        
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
-
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <meta name="text:Google Analytics ID" content="" />
     <meta name="color:Background color" content="whitesmoke" />
     <meta name="color:Posts Backround color" content="white" />
@@ -101,7 +102,7 @@ ga('create', '{text:Google Analytics ID}', 'tumblr.com');
                     {/block:Quote}
 
                     {block:Link}
-                    <h2><a href="{URl}" {Target} >{Name}</a></h2>
+                    <h2><a href="{URL}">{Name}</a></h2>
                     {block:Description}{Description}{/block:Description}
                     {/block:Link}
 
@@ -138,7 +139,7 @@ ga('create', '{text:Google Analytics ID}', 'tumblr.com');
                     {/block:Answer}
 
                 </div>
-                <div class="{block:PermalinkPage}no{block:PermalinkPage}hovershow">
+                <div class="{block:PermalinkPage}no{/block:PermalinkPage}hovershow">
                     {block:HasTags}
                      <div class="post-tags">
                          <ul>
