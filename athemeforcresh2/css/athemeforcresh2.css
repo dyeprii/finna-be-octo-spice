@@ -1,0 +1,136 @@
+body {
+    background-color: #f8f8f8;
+}
+.wrapper {
+    max-width: 840px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    font-size: 0.78em;
+    padding-top: 20px;
+}
+.sidebar {
+    max-width: 30%;
+    margin: 0 auto;
+    float: left;
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+       -moz-box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+            box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+}
+.sidebar img {
+    max-width: 100%;
+}
+.sidebar .top {
+    padding: 10px;
+}
+.sidebar ul {
+    padding: 0;
+    list-style: none;
+}
+.sidebar ul li {
+    display: inline-block;
+    padding: 5px 8px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    -webkit-transition: background-color 400ms;
+       -moz-transition: background-color 400ms;
+            transition: background-color 400ms;
+}
+.sidebar ul li:hover {
+    background-color: white;
+    -webkit-transition: background-color 400ms;
+       -moz-transition: background-color 400ms;
+            transition: background-color 400ms;
+}
+.sidebar a {
+    text-decoration: none;
+}
+.blog-title a {
+    color: #D61A33;
+}
+.posts {
+    width: 67%;
+    margin: 0 auto;
+    float: right;    
+    right: 0;
+}
+.post-content {
+    padding: 10px;
+}
+article {
+    background-color: white;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+       -moz-box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+            box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+}
+article:hover .post-meta {
+    opacity: 1;
+    -webkit-transition: opacity 400ms;
+       -moz-transition: opacity 400ms;
+            transition: opacity 400ms;
+}
+.post-meta {
+    border-top: 1px solid #f8f8f8;
+    padding: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 400ms;
+       -moz-transition: opacity 400ms;
+            transition: opacity 400ms;
+}
+.post-meta p {
+    margin: 0;
+}
+a {
+    color: #333;
+    -webkit-transition: color 400ms;
+       -moz-transition: color 400ms;
+            transition: color 400ms;
+}
+a:hover {
+    text-decoration: none;
+    color: #D61A33;
+    -webkit-transition: color 400ms;
+       -moz-transition: color 400ms;
+            transition: color 400ms;
+}
+.prev, .next {
+    display: inline-block;
+    padding: 5px;
+    margin-top: 20px;
+}
+.prev p, .next p {
+    margin: 0;
+}
+.prev:hover, .next:hover {
+    background-color: white;
+    transition: box-shadow 400ms;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+       -moz-box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+            box-shadow: 4px 4px 5px 0px rgba(0, 51, 34, 0.34);
+}
+.prev p:before {
+    content: "\2190";
+    opacity: 0;
+    color: #D61A33;
+}
+.next p:after {
+    content: "\2192";
+    opacity: 0;
+    color: #D61A33;
+}
+.prev p:hover:before {
+    transition: opacity 400ms;
+    opacity: 1
+}
+.next p:hover:after {
+    transition: opacity 400ms;
+    opacity: 1;
+}
+.next {
+    float: right;
+}
+.pagination a {
+    text-decoration: none;
+}
