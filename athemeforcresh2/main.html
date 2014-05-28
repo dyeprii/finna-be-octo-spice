@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+    <link rel="stylesheet" href="http://static.tumblr.com/l5hngof/q07n62q1o/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="http://static.tumblr.com/l5hngof/9SSn6ai0c/athemeforcresh2.css" type="text/css" />    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,greek-ext' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Lobster&text={Title}' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+    <!--theme options -->
+    <meta name="image:Banner" content="http://static.tumblr.com/l5hngof/4Ytn6aeis/banner.png" />
+    
+    <style type="text/css">
+        {CustomCSS}
+    </style>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar nodecor">
+            <a href="{BlogURL}"><img src="{image:Banner}" alt="banner" /></a>
+            <div class="top">
+                <h1><span class="blog-title"><a href="{BlogURL}">{Title}</a></span></h1>
+                <nav class="mainnav">
+                    <ul>{block:HasPages}{block:Pages}
+                        <li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+                        {block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+                        {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+                    </ul>
+                </nav>
+                <div class="widgets">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="posts">
+        {block:Posts}
+            <article class="{block:Text}text{/block:Text}{block:Photo}photo nopad{/block:Photo}{block:Panorama}panorama nopad{/block:Panorama}{block:Photoset}photoset nopad{/block:Photoset}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Audio}audio nopad{/block:Audio}{block:Video}video nopad{/block:Video}{block:Answer}answer{/block:Answer}">
+                <div class="post-content">
+                {block:Title}<h2 class="post-title">{Title}</h2>{/block:Title}
+                    {block:Text}{Body}{/block:Text}
+
+                    {block:Photo}
+                        <figure>
+                            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+                            {block:Caption}<figcaption>{Caption}</figcaption>{/block:Caption}
+                        </figure>
+                    {/block:Photo}
+
+                    {block:Panorama}
+                        <figure>
+                            {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+                            {block:Caption}<figcaption>{Caption}</figcaption>{/block:Caption}
+                        </figure>
+                    {/block:Panorama}
+                    
+                    {block:Photoset}
+                        {block:IndexPage}
+                            {Photoset}
+                        {/block:IndexPage}
+                        {block:PermalinkPage}
+                            {block:Photos}
+                                <figure><img src="{PhotoURL-500}" alt="" /></figure>
+                            {/block:Photos}
+                        {/block:PermalinkPage}
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Photoset}
+
+                    {block:Quote}
+                    <blockquote>
+                        {Quote}
+                        {block:Source}<cite>{Source}</cite>{/block:Source}
+                    </blockquote>
+                    {/block:Quote}
+
+                    {block:Link}
+                    <h2><a href="{URL}">{Name}</a></h2>
+                    {block:Description}{Description}{/block:Description}
+                    {/block:Link}
+
+                    {block:Chat}
+                    <ul>        
+                        {block:Lines}
+                        <li class="{Alt}">{block:Label}<span class="label">{Label} </span>{/block:Label}{Line}</li>
+                        {/block:Lines}
+                    </ul>
+                    {/block:Chat}
+
+                    {block:Audio}
+                        {block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}
+                        {block:AudioPlayer}{AudioPlayer}{/block:AudioPlayer}
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Audio}
+
+                    {block:Video}
+                        {Video-500}
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Video}
+
+                    {block:Answer}
+                         <div class="question">
+                             <p>{Question}</p>
+                             <p class="asker">{Asker}</p>
+                         </div>
+                         <div class="answer">
+                             {block:Answerer}
+                             <p><span>{Answerer}: </span>{Answer}</p>
+                             {/block:Answerer}
+                             {Replies}
+                         </div>
+                    {/block:Answer}
+                </div>
+                    <div class="post-meta">{block:Date}
+                        <p class="post-date"><a href="{Permalink}">Posted {DayOfWeek} {Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</a></p>{/block:Date}{block:PostNotes}with {NoteCountWithLabel}{/block:PostNotes} 
+                    </div>
+            </article>
+        {/block:Posts}
+
+        {block:Pagination}
+            <div class="pagination">{block:PreviousPage}
+                <div class="prev">
+                    <p><a href="{PreviousPage}">Previous</a></p>
+                </div>{/block:PreviousPage}{PreviousPage}
+                <div class="next">
+                    <p><a href="{NextPage}">Next</a></p>
+                </div>{/block:NextPage}
+            </div>
+        {/block:Pagination}
+
+        {block:PermalinkPagination}
+            <div class="pagination">{block:PreviousPost}
+                <div class="prev">
+                    <p><a href="{PreviousPost}">Previous</a></p>
+                </div>{/block:PreviousPost}{PreviousPost}
+                <div class="next">
+                    <p><a href="{NextPost}">Next</a></p>
+                </div>{/block:NextPost}
+            </div>
+        {/block:PermalinkPagination}
+            
+            <footer class="clearfix">
+                <p>{Title}<br />{CopyrightYears}</p>
+                  <ul>{block:HasPages}{block:Pages}
+                      <li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+                      {block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+                      {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+                  </ul>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
