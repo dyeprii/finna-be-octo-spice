@@ -8,7 +8,7 @@
     <meta name="description" content="{MetaDescription}" />
     {/block:Description}
     <link rel="stylesheet" href="http://static.tumblr.com/l5hngof/q07n62q1o/normalize.css" title="" type="text/css" />
-    <link rel="stylesheet" href="http://static.tumblr.com/l5hngof/StCn665zu/style.min.css" title="" type="text/css" />        
+    <link rel="stylesheet" href="http://static.tumblr.com/l5hngof/wSfn6e8eh/style.min.css" title="" type="text/css" />        
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="{Favicon}">
@@ -63,7 +63,6 @@ ga('create', '{text:Google Analytics ID}', 'tumblr.com');
         {block:Posts} 
         <div class="posts">
             <article class="{block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Panorama}panorama{/block:Panorama}{block:Photoset}photoset{/block:Photoset}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Audio}audio{/block:Audio}{block:Video}video{/block:Video}{block:Answer}answer{/block:Answer}">
-                {block:Date}<p class="post-date"><a href="{Permalink}">posted {DayOfWeek} {Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</a></p>{/block:Date}
                 <div class="post-content">
                 {block:Title}<h2 class="post-title">{Title}</h2>{/block:Title}
                     {block:Text}{Body}{/block:Text}
@@ -139,7 +138,15 @@ ga('create', '{text:Google Analytics ID}', 'tumblr.com');
                     {/block:Answer}
 
                 </div>
-                <div class="{block:PermalinkPage}no{/block:PermalinkPage}hovershow">
+                <div class="post-meta">{block:Date}
+                    <div class="post-date">
+                        <a href="{Permalink}">Posted {DayOfWeek} {Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</a>
+                    </div>{/block:Date}
+                    <div class="post-notecount">
+                         {block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+                    </div>
+                </div>
+                <div class="{block:PermalinkPage}no{/block:PermalinkPage}hovershow clearfix">
                     {block:HasTags}
                      <div class="post-tags">
                          <ul>
@@ -151,7 +158,6 @@ ga('create', '{text:Google Analytics ID}', 'tumblr.com');
                      </div>
                      {/block:HasTags}
                      <div class="post-notes">
-                         {block:RebloggedFrom}<p>Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a> with{/block:RebloggedFrom}{block:NoteCount} <a href="{Permalink}">{NoteCountWithLabel}</a></p>{/block:NoteCount}
                          {block:PostNotes}{PostNotes}{/block:PostNotes}
                      </div>
                 </div>
@@ -181,7 +187,7 @@ ga('create', '{text:Google Analytics ID}', 'tumblr.com');
             {/block:IndexPage} 
         <footer>
             <p>{Title}. {CopyrightYears}</p>
-            <p><a href="htt://finna-be-octo-spice.tumblr.com">Ask 'bout the theme</a></p>
+            <p><a href="https://raw.githubusercontent.com/dyeprii/finna-be-octo-spice/master/finna-be-octo-spice/main.html">View Theme Source</a></p>
         </footer>
     </div>
     
