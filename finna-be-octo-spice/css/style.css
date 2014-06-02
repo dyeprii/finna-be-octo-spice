@@ -10,10 +10,9 @@ h1, h2, h3, h4, h5, h6 {
     color: #333;
     width: 800px;
     margin: 0 auto;
-    padding-top: 20px;
 }
 .header, .mainnav, article, footer {
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 15px;
     vertical-align: top;
     background-color: #fff;
