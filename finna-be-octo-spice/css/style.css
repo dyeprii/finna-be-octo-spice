@@ -135,11 +135,12 @@ figure {
 .answer .asker {
     text-align: right;
 }
-blockquote cite {
+.quote blockquote cite {
     display: block;
     font-style: normal;
+    text-indent: -1em;
 }
-blockquote cite:before {
+.quote blockquote cite:before {
     content: "\2014"}
 .chat ul li {
     padding: 5px;
