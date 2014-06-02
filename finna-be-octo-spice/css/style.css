@@ -139,9 +139,11 @@ figure {
     display: block;
     font-style: normal;
     text-indent: -1em;
+    color: red;
 }
 .quote blockquote cite:before {
-    content: "\2014"}
+    content: "\2014";
+}
 .chat ul li {
     padding: 5px;
 }
