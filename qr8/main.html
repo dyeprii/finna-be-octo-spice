@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>
+        {block:PostSummary}{PostSummary} | {/block:PostSummary}
+        {block:SearchPage}Search results for {SearchQuery} |{/block:SearchPage}
+        {Title}
+    </title>
+
+    <link rel="stylesheet" href="http://static.tumblr.com/l5hngof/q07n62q1o/normalize.css" type="text/css" />        
+    <link rel="stylesheet" href="http://static.tumblr.com/l5hngof/JIRn6nw2c/qr8.min.css" type="text/css" />    
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    {block:PermalinkPage}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    {/block:PermalinkPage}
+    <meta name="text:Google Analytics ID" content="" />
+
+</head>
+<body>
+    <div class="wrapper">
+        <header class="center">
+            <h1><span class="title"><a href="{BlogURL}">{Title}</a></span></h1>
+            {block:Description}<p class="description">{Description}</p>{/block:Description}
+        </header>
+
+        <div class="posts center">
+        {block:Posts} 
+            <article class="{block:IndexPage}box indexpage {/block:IndexPage}{block:PermalinkPage}permalinkpage {/block:PermalinkPage}{block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Panorama}panorama{/block:Panorama}{block:Photoset}photoset{/block:Photoset}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Audio}audio{/block:Audio}{block:Video}video{/block:Video}{block:Answer}answer{/block:Answer}">
+                <div class="post-content">
+                    {block:Title}<h2><span class="post-title">{Title}</span></h2>{/block:Title}
+                    
+                    {block:Text}{Body}{/block:Text}
+
+                    {block:Photo}
+                        <figure>
+                            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+                            {block:Caption}<figcaption class="caption">{Caption}</figcaption>{/block:Caption}
+                        </figure>
+                    {/block:Photo}
+
+                    {block:Panorama}
+                        <figure>
+                            {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+                            {block:Caption}<figcaption class="caption">{Caption}</figcaption>{/block:Caption}
+                        </figure>
+                    {/block:Panorama}
+                    
+                    {block:Photoset}
+                        {block:IndexPage}
+                            {Photoset}
+                        {/block:IndexPage}
+                        {block:PermalinkPage}
+                            {block:Photos}
+                                <figure><img src="{PhotoURL-500}" alt="" /></figure>
+                            {/block:Photos}
+                        {/block:PermalinkPage}
+                        <div class="caption">
+                            {block:Caption}{Caption}{/block:Caption}
+                        </div>
+                    {/block:Photoset}
+
+                    {block:Quote}
+                    <blockquote>
+                        {Quote}
+                        {block:Source}<cite>{Source}</cite>{/block:Source}
+                    </blockquote>
+                    {/block:Quote}
+
+                    {block:Link}
+                    <h2><a href="{URL}">{Name}</a></h2>
+                        <div class="caption">
+                    {block:Description}{Description}{/block:Description}
+                        </div>
+                    {/block:Link}
+
+                    {block:Chat}
+                    <ul>        
+                        {block:Lines}
+                        <li class="{Alt}">{block:Label}<span class="label">{Label} </span>{/block:Label}{Line}</li>
+                        {/block:Lines}
+                    </ul>
+                    {/block:Chat}
+
+                    {block:Audio}
+                        {block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}
+                        <div class="caption">
+                        {block:Caption}{Caption}{/block:Caption}
+                        </div>
+                    {/block:Audio}
+
+                    {block:Video}
+                        {Video-500}
+                        <div class="caption">
+                        {block:Caption}{Caption}{/block:Caption}
+                        </div>
+                    {/block:Video}
+
+                    {block:Answer}
+                         <div class="question">
+                             <p>{Question}</p>
+                             <p class="asker">{Asker}</p>
+                         </div>
+                         <div class="answer">
+                             {block:Answerer}
+                             <p><span>{Answerer}: </span>{Answer}</p>
+                             {/block:Answerer}
+                             {Replies}
+                         </div>
+                    {/block:Answer}
+                </div>
+                {block:IndexPage}
+                <div class="post-footer">
+                    <div class="post-id">
+                        <span><a href="{Permalink}">#{PostID}</a></span>
+                    </div>
+                    <div class="post-notecount">
+                        {block:NoteCount}<span>{NoteCountWithLabel}</span>{/block:NoteCount}
+                    </div>
+                </div>
+                {/block:IndexPage}
+            </article>
+
+            {block:PermalinkPage}
+            <div class="post-meta">
+                <div class="post-date">
+                    {block:Date}<p>{block:NotReblog}Posted {/block:NotReblog}{block:RebloggedFrom}Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} on {DayOfWeek} {Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}{block:NoteCount} with {NoteCountWithLabel}{/block:NoteCount}</p>{/block:Date}
+                </div>
+                <div class="post-notes">
+                    {block:PostNotes}
+                    <p class="trigger">Show notes</p>
+                    <div class="showhide">
+                    {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                </div>
+            </div>
+
+            <div class="pagenavigation center">
+                {block:PermalinkPagination}
+                <ul>
+                    {block:PreviousPost}<li class="prev"><a href="{PreviousPost}">Previous</a></li>{/block:PreviousPost}
+                    {block:NextPost}<li class="next"><a href="{NextPost}">Next</a></li>{/block:NextPost}
+                </ul>
+                {/block:PermalinkPagination}
+            </div>
+            {/block:PermalinkPage}
+        {/block:Posts} 
+        </div> <!-- posts -->
+        {block:IndexPage}
+        <div class="pagenavigation center">
+            {block:Pagination}
+            <ul>
+                {block:PreviousPage}<li class="prev"><a href="{PreviousPage}">Previous</a></li>{/block:PreviousPage}
+                {block:NextPage}<li class="next"><a href="{NextPage}">Next</a></li>{/block:NextPage}
+            </ul>
+            {/block:Pagination}
+        </div>
+        {/block:IndexPage} 
+         <footer class="center">
+            <nav class="footernav">
+                <ul>
+                    <li><a href="{BlogURL}">Home</a></li>
+                    {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{block:Pages}{/block:HasPages}
+                    {block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{block:SubmissionsEnabled}
+                    {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{block:AskEnabled}
+                </ul>
+            </nav>
+            <form action="/search" method="get" accept-charset="utf-8">
+                <input type="text" name="q" value="{SearchQuery}" placeholder="Search"/>
+                <input type="submit" value="Search" />
+            </form>
+            <div class="credits">
+                <p>{Title}<br />{CopyrightYears}<br /><a href="#">View Theme Source</a></p>
+            </div>
+         </footer>
+    </div> <!--wrapper-->
+{block:PermalinkPage}
+<script type="text/javascript" charset="utf-8">
+$(".trigger").click(function() {
+        $(".showhide").fadeToggle("slow", "linear", function(){
+            var trigger = $(".trigger").text();
+            $(".trigger").text(trigger === "Show notes" ? "Hide notes" : "Show notes")})});
+</script>            
+{/block:PermalinkPage}
+</body>
+</html>
